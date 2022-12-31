@@ -114,8 +114,8 @@ for i in groups:
     )
 
 layouts = [ #layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4), #layout.MonadTall(border_focus_stack=["#005577", "#444444" ], border_with=1),
-    layout.Tile(border_focus="#CB5436", border_normal="#444444", border_width=5, ratio_increment=0.1, shift_windows=True),
-    layout.Max(border_focus="#005577", border_normal="#444444", border_width=5),
+    layout.Tile(border_focus="#CB5436", border_normal="#444444", border_width=4, ratio_increment=0.1, shift_windows=True),
+    layout.Max(border_focus="#005577", border_normal="#444444", border_width=4),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
@@ -128,8 +128,8 @@ layouts = [ #layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_wi
 ]
 
 widget_defaults = dict(
-    font="DejaVu Sans",
-    fontsize=19,
+    font="Liberation Sans",
+    fontsize=15,
     padding=1,
 )
 extension_defaults = widget_defaults.copy()
@@ -153,14 +153,8 @@ screens = [
                 widget.Spacer(length=25),
                 widget.Pomodoro(prefix_inactive='POMODORO'),
                 widget.Spacer(length=25),
-                widget.TextBox("📡"),
-                widget.Wlan(interface='wlp170s0', format='{essid} {percent:2.0%}'),
-                widget.Spacer(length=25),
                 widget.TextBox("💾"),
                 widget.Memory(),
-                widget.Spacer(length=25),                               
-                widget.BatteryIcon(battery=1),
-                widget.Battery(battery=1, foreground='#ffffff', background='#000000'),
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 widget.Spacer(length=25),
                 widget.TextBox("📅"),
@@ -191,6 +185,9 @@ follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
 floating_layout = layout.Floating(
+    border_focus="#8ABEB7",
+    border_normal="#444444",
+    border_width=4,
     float_rules=[
         # Run the utility of `xprop` to see the wm class and name of an X client.
         *layout.Floating.default_float_rules,
